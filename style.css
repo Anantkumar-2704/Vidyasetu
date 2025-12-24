@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eaf4ff, #f7fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+}
+
+.top-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.top-logo img {
+    height: 60px;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    overflow: hidden;
+}
+
+/* Left Section */
+.left-section {
+    width: 55%;
+    padding: 40px;
+    background: #f9fbff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-section img {
+    width: 100%;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+.feature span {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Right Section */
+.right-section {
+    width: 45%;
+    padding: 50px;
+}
+
+.right-section h2 {
+    font-size: 28px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+
+.input-box span {
+    margin-right: 10px;
+    color: #3b82f6;
+}
+
+.input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.eye {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.forgot {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #2563eb;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+.signup {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.signup a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}

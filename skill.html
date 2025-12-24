@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Level</title>
+  <link rel="stylesheet" href="LearningPrefrenceStyle.css" />
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="image/logo.jpg" alt="Vidyasetu" />
+  </div>
+
+  <!-- Main Card -->
+  <div class="card">
+
+    <!-- Progress -->
+    <div class="progress">
+      <span class="step active">3</span>
+      <div class="bar">
+        <div class="fill" style="width:100%"></div>
+      </div>
+      <p>Step 3 of 3</p>
+    </div>
+
+    <!-- Title -->
+    <h1>How confident are you in this subject?</h1>
+    <p class="subtitle">
+      Choose your current skill level.
+    </p>
+
+    <!-- Skill Level Cards -->
+    <div class="preferences">
+
+      <div class="pref-card">
+        <span class="check">✓</span>
+        <img src="image/beginner.jpg" />
+        <p>Beginner</p>
+      </div>
+
+      <div class="pref-card active">
+        <span class="check">✓</span>
+        <img src="image/intermediate.jpg" />
+        <p>Intermediate</p>
+      </div>
+
+      <div class="pref-card">
+        <span class="check">✓</span>
+        <img src="image/advanced.jpg" />
+        <p>Advanced</p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="steps">
+        <span>Basic Information</span>
+        <span>Learning Preference</span>
+        <span class="active">Skill Level</span>
+      </div>
+
+      <button id="backBtn" class="back-btn">← Back</button>
+      <button id="nextBtn" class="next-btn">
+        Finish <span class="arrow">✓</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Selection Script -->
+  <script>
+    const cards = document.querySelectorAll('.pref-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Navigation -->
+  <script>
+    document.getElementById("backBtn").addEventListener("click", function () {
+      window.location.href = "LearningPrefrence.html";
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", function () {
+      alert("Onboarding Completed!");
+      // or redirect to dashboard
+       window.location.href = "Alogin.html";
+    });
+  </script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learning Preference</title>
+  <link rel="stylesheet" href="LearningPrefrenceStyle.css" />
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="image/logo.jpg " alt="Vidyasetu" />
+  </div>
+
+  <!-- Main Card -->
+  <div class="card">
+
+    <!-- Progress -->
+    <div class="progress">
+      <span class="step active">2</span>
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+      <p>Step 2 of 3</p>
+    </div>
+
+    <!-- Title -->
+    <h1>How do you prefer to learn?</h1>
+    <p class="subtitle">
+      Choose one or more learning methods that work best for you.
+    </p>
+
+    <!-- Preference Cards -->
+    <div class="preferences">
+
+      <div class="pref-card ">
+        <span class="check">✓</span>
+        <img src="image/video.jpg" />
+        <p>Video Lessons</p>
+      </div>
+
+      <div class="pref-card ">
+        <span class="check">✓</span>
+        <img src="image/reading.jpg" />
+        <p>Reading Content</p>
+      </div>
+
+      <div class="pref-card">
+        <span class="check">✓</span>
+        <img src="image/practice.jpg" />
+        <p>Practice Problems</p>
+      </div>
+
+      <div class="pref-card">
+        <span class="check">✓</span>
+        <img src="image/interactive.jpg" />
+        <p>Interactive Activities</p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="steps">
+        <span>Basic Information</span>
+        <span class="active">Learning Preference</span>
+        <span>Skill Level</span>
+      </div>
+
+     <button id="backBtn" class="back-btn">← Back</button>
+  <button id="nextBtn" class="next-btn" disabled>
+    Next <span class="arrow">→</span>
+  </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+ 
+
+
+<script>
+  const cards = document.querySelectorAll('.pref-card');
+  const nextBtn = document.getElementById('nextBtn');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+
+      // remove active from all
+      cards.forEach(c => c.classList.remove('active'));
+
+      // add active to clicked one
+      card.classList.add('active');
+
+      // ENABLE next button
+      nextBtn.disabled = false;
+    });
+  });
+</script>
+  <!-- Navigation -->
+  <script>
+   
+document.getElementById("nextBtn").addEventListener("click", function () {
+      
+      window.location.href = "skill.html";
+     
+    });
+
+  document.getElementById("backBtn").addEventListener("click", function () {
+    window.location.href = "BasicInfo.html";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vidyasetu | Onboarding</title>
+  <link rel="stylesheet" href="BasicInfoStyle.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="image/logo.jpg" alt="Vidyasetu Logo">
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+
+      <!-- Progress -->
+      <div class="progress">
+        <span class="step active">1</span>
+        <div class="line"></div>
+        <p>Step 1 of 3</p>
+      </div>
+
+      <!-- Title -->
+      <h1>Let’s Personalize Your Learning Journey</h1>
+      <p class="subtitle">Help us understand you better in just a few steps.</p>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- Left Menu -->
+        <div class="menu">
+          <div class="menu-item active">Basic Information</div>
+          <div class="menu-item">Learning Preference</div>
+          <div class="menu-item">Skill Level</div>
+        </div>
+
+        <!-- Form -->
+        <div class="form">
+
+          <label>Full Name</label>
+          <input type="text" id="fullName" placeholder="Your Name">
+
+          <label>Class / Grade</label>
+          <select id="grade">
+  <option value="" disabled selected>Select Grade</option>
+  <option value="5">Class 5th grade</option>
+  <option value="6">Class 6th grade</option>
+  <option value="7">Class 7th grade</option>
+</select>
+
+          <label class="subjects-label">
+            Subjects <span>Choose the subjects you're interested in:</span>
+          </label>
+
+          <div class="subjects">
+            <div class="subject active">Maths</div>
+            <div class="subject">Science</div>
+            <div class="subject">English</div>
+            <div class="subject">Computer</div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="buttons">
+            <button id="backBtn" class="back-btn">← Back</button>
+            <button id="nextBtn" class="next-btn" disabled >Next
+                <span class="arrow">→</span>
+
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<script>
+const fullName = document.getElementById("fullName");
+const grade = document.getElementById("grade");
+const subjects = document.querySelectorAll(".subject");
+const nextBtn = document.getElementById("nextBtn");
+
+// Only one subject selectable
+subjects.forEach(subject => {
+  subject.addEventListener("click", () => {
+    // remove active from all subjects
+    subjects.forEach(s => s.classList.remove("active"));
+    // add active to clicked subject
+    subject.classList.add("active");
+    validateForm();
+  });
+});
+
+// Validate input and selection
+fullName.addEventListener("input", validateForm);
+grade.addEventListener("change", validateForm);
+
+function validateForm() {
+  const nameValid = fullName.value.trim() !== "";
+  const gradeValid = grade.value !== "";
+  const subjectSelected = document.querySelectorAll(".subject.active").length === 1;
+
+  nextBtn.disabled = !(nameValid && gradeValid && subjectSelected);
+}
+
+// Next button navigation
+nextBtn.addEventListener("click", () => {
+  if (!nextBtn.disabled) {
+    window.location.href = "LearningPrefrence.html";
+  }
+});
+</script>
+<script>
+document.getElementById("backBtn").addEventListener("click", () => {
+    window.location.href = "Alogin.html"; // your login page
+});
+</script>
+
+
+</body>
+</html>
