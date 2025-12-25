@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vidyasetu Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary: #4e8cff;
+  --bg: #f4f8fc;
+  --card: rgba(255,255,255,0.9);
+  --text-dark: #243b5a;
+  --text-light: #6c7a89;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef5fb, #f7fbff);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 72px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-left img {
+  height: 40px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.nav-right {
+  cursor: pointer;
+}
+
+/* ================= MAIN ================= */
+.main {
+  padding: 45px;
+}
+
+.welcome h1 {
+  font-size: 32px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  color: var(--text-light);
+  margin-bottom: 38px;
+}
+
+/* ================= GRID ================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 26px 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--text-light);
+}
+
+/* ================= PROGRESS ================= */
+.progress-bar {
+  margin-top: 16px;
+  height: 8px;
+  background: #e6edf5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, #5aa9ff, var(--primary));
+}
+
+/* ================= BUTTONS ================= */
+.resume-btn {
+  margin-top: 18px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: var(--primary);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(78,140,255,0.45);
+}
+
+.logout {
+  margin-top: 38px;
+}
+
+.logout button {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 30px;
+  background: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255,107,107,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .main {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-left">
+    <img src="image/logo.jpg" alt="Vidyasetu">
+  </div>
+  <div class="nav-right" id="profileBtn">
+  Hello, Student 👋
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <div class="welcome">
+    <h1>Welcome back!</h1>
+    <p>Your personalized learning journey continues here.</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- Learning Progress -->
+    <div class="card">
+      <h3>📈 Learning Progress</h3>
+      <p>You have completed <strong>65%</strong> of your course</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Learning Preference -->
+    <div class="card">
+      <h3>🎯 Learning Preference</h3>
+      <p>Video Lessons, Practice Problems</p>
+    </div>
+
+    <!-- Skill Level -->
+    <div class="card">
+      <h3>🚀 Skill Level</h3>
+      <p>Intermediate</p>
+    </div>
+
+    <!-- Continue Learning -->
+    <div class="card">
+      <h3>▶ Continue Learning</h3>
+      <p>Pick up where you left off</p>
+      <button class="resume-btn" id="resumeBtn">Resume Course</button>
+    </div>
+
+  </div>
+
+  <div class="logout">
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+</div>
+
+
+<script>
+document.getElementById("logoutBtn").addEventListener("click", function () {
+  localStorage.clear();
+  window.location.href = "index.html";
+});
+
+document.getElementById("profileBtn").addEventListener("click", function () {
+  window.location.href = "dashboard2.html";
+});
+</script>
+<script>
+
+
+document.getElementById("resumeBtn").addEventListener("click", function () {
+  window.location.href = "gamified.html";
+});
+</script>
+</body>
+</html>
