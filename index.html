@@ -44,15 +44,15 @@
                 Log in to continue your personalized learning journey.
             </p>
 
-            <form>
+            <form id="loginForm">
                 <div class="input-box">
                     <span>📧</span>
-                    <input type="email" placeholder="Email address">
+                    <input type="email" id="email" placeholder="Email address">
                 </div>
 
                 <div class="input-box">
                     <span>🔒</span>
-                    <input type="password" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password">
                     <span class="eye">👁</span>
                 </div>
 
@@ -60,7 +60,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
 
-                <button class="login-btn">Log In</button>
+                <button type="submit" class="login-btn" id="loginBtn">Log In</button>
 
                 <p class="signup">
                     Not registered yet?
@@ -71,6 +71,25 @@
 
     </div>
 </div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page reload
 
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (email === "" || password === "") {
+    alert("Please enter email and password");
+    return;
+  }
+
+  // save login state
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userEmail", email);
+
+  // redirect to dashboard
+  window.location.href = "dashboard.html";
+});
+</script>
 </body>
 </html>
